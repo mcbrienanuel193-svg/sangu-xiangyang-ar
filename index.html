@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173e35">
+  <title>三顾襄阳 · AR 文化奇遇</title>
+  <meta name="description" content="跟着刘备、关羽、张飞三访隆中，以原创人物 IP 开启三顾故事与展示卡 AR 相见。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='12' fill='%239e4435'/%3E%3Cpath d='M18 20h28M21 32h22M16 44h32' stroke='%23fff6df' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="app.css"><script src="app.js" defer></script>
+<script src="vendor/qrcodegen-v1.8.0.js" defer></script><script src="entry-qr.js" defer></script></head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="三顾襄阳首页"><span class="seal" aria-hidden="true">三</span><span>三顾襄阳<small>XIANGYANG · AN AR ENCOUNTER</small></span></a>
+    <nav class="topnav" aria-label="主导航"><button class="nav-btn active" data-view="journey">三顾之旅</button><button class="nav-btn" data-view="characters">人物图鉴</button><button class="nav-btn" data-view="collection">我的印记 <span class="count">0</span></button></nav>
+    <button class="about-btn" id="about-button" aria-label="查看作品说明">关于这场奇遇</button>
+  </header>
+  <main>
+    <section id="journey-view" class="view">
+      <div class="page-heading"><div><p class="eyebrow">跟着刘关张，三访隆中</p><h1>三顾之旅<span class="title-dot">。</span></h1></div><p class="heading-note">以诚相访，以智相逢。<br>让纸上的人物，走进眼前的世界。</p></div>
+      <a class="mobile-ar-entry" href="ar.html"><span>开启 AR 相见</span><span class="camera-icon" aria-hidden="true"></span></a>
+      <div class="journey-layout">
+        <div class="theatre">
+          <div class="theatre-top"><span class="location-label"><i></i> 襄阳 · 隆中</span><span class="scene-tag" id="scene-tag">壹 · 初访</span></div>
+          <div class="stage" id="stage"><span class="stage-word" aria-hidden="true">隆中</span><div class="orbit" aria-hidden="true"></div><div class="character-art" id="hero-art"><img src="assets/zhugeliang.png" alt="羽扇纶巾的诸葛亮 IP" id="hero-image"></div><div class="art-label"><span id="hero-name">诸葛亮</span><small id="hero-title">一柄羽扇，胸中有天下</small></div><span class="vertical-poem" aria-hidden="true">卧龙一梦 · 千载相逢</span></div>
+          <div class="stage-bottom"><span>选择同行人物</span><div class="character-switch" id="hero-switch" role="group" aria-label="选择同行人物"></div><button class="text-btn" id="hero-detail">认识他</button></div>
+        </div>
+        <aside class="journey-panel">
+          <div class="chapter-tabs" role="tablist" aria-label="三顾章节"><button role="tab" aria-selected="true" data-chapter="0"><span>壹</span>一顾</button><button role="tab" aria-selected="false" data-chapter="1"><span>贰</span>二顾</button><button role="tab" aria-selected="false" data-chapter="2"><span>叁</span>三顾</button></div>
+          <div class="chapter-content"><p class="eyebrow" id="chapter-kicker">第一章 · 寻贤</p><h2 id="chapter-title">一顾隆中</h2><p class="chapter-desc" id="chapter-desc">一位求贤的使君，一位未曾谋面的卧龙。和刘备一起叩响草庐的门，开启这场相遇。</p><div class="chapter-meta"><span id="chapter-guide">同行人 · 刘备</span><span>约 1 分钟</span></div><button class="primary-btn" id="story-start">走进这段故事 <span aria-hidden="true">✦</span></button></div>
+          <div class="ar-entry"><div class="ar-entry-head"><span class="ar-glyph" aria-hidden="true">⌗</span><div><h3>让人物，来到你身边</h3><p>用镜头识别展示卡，开启 AR 相见。</p></div></div><a class="outline-btn" href="ar.html">开启 AR 相见 <span class="camera-icon" aria-hidden="true"></span></a><button class="text-btn marker-link" id="marker-open">领取 AR 展示卡</button></div>
+        </aside>
+      </div>
+      <div class="journey-footer"><div class="foot-quote"><span class="small-seal">诚</span><p>三顾，是一段故事。<br><strong>也是一次关于诚意的选择。</strong></p></div><button class="qr-teaser" id="qr-open"><img data-entry-qr alt="手机体验入口二维码"><span>手机扫码体验<small>把这场奇遇带在身边</small></span></button><span class="project-label">三国文化 × 原创 IP × AR 互动</span></div>
+    </section>
+    <section id="characters-view" class="view" hidden><div class="page-heading"><div><p class="eyebrow">四位故人，各有风采</p><h1>人物图鉴<span class="title-dot">。</span></h1></div><p class="heading-note">点击人物，听他讲一段心里话。</p></div><div class="character-grid" id="character-grid"></div></section>
+    <section id="collection-view" class="view" hidden><div class="page-heading"><div><p class="eyebrow">每次相访，都留下回响</p><h1>我的印记<span class="title-dot">。</span></h1></div><p class="heading-note" id="collection-note">完成三段故事，收集三枚印记。</p></div><div class="stamp-grid" id="stamp-grid"></div><div class="collection-end"><p id="collection-summary">从第一声叩门开始，把诚意留在隆中。</p><button class="primary-btn" data-view="journey">继续三顾之旅</button></div></section>
+  </main>
+  <footer class="site-footer"><span>三顾襄阳 · 文化互动作品</span><button class="text-btn" id="source-open">故事依据与改编说明</button></footer>
+  <dialog id="story-dialog" class="story-dialog" aria-labelledby="story-name"><button class="close-btn" data-close aria-label="关闭故事">×</button><div class="story-scene"><span class="story-number" id="story-number" aria-hidden="true">壹</span><div class="story-character" id="story-art"></div><span class="story-place" id="story-place">隆中 · 草庐前</span></div><div class="story-body"><p class="eyebrow" id="story-step">第一章 · 寻贤</p><h2 id="story-name">一顾隆中</h2><p class="speaker" id="story-speaker">刘备</p><p class="dialogue" id="story-text"></p><div id="story-choices" class="story-choices"></div><p class="story-feedback" id="story-feedback" role="status"></p><button class="primary-btn" id="story-next" hidden>继续</button></div></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-name"><button class="close-btn" data-close aria-label="关闭人物介绍">×</button><div class="detail-art" id="detail-art"></div><div class="detail-body"><p class="eyebrow" id="detail-role"></p><h2 id="detail-name"></h2><p class="detail-quote" id="detail-quote"></p><p id="detail-description"></p><button class="outline-btn" id="detail-companion">与他同行</button></div></dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="close-btn" data-close aria-label="关闭">×</button><div id="info-content"></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body></html>
+
